@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronica 2007 - Inicio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #4a4e69;
+            color: white;
+            padding: 0.5rem 0 0.3rem 0; 
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+            margin-bottom: 0;
+        }
+
+        .contenedor-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 0 0 30px;
+        }
+        
+        h1 {
+            font-family: 'Montserrat', 'Georgia', serif;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 0;
+            margin-right: 2.5rem;
+            margin-top: 0;
+            margin-left: 0;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            list-style: none;
+            margin-top: 0;
+            gap: 2rem;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #22223b;
+            color: #fff;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem 3rem 1rem;
+            background: linear-gradient(135deg, #f1f1f1cb, hsla(36, 85%, 29%, 0.663));
+            color: white;
+            position: relative;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        .hero-con-imagen {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 2rem auto;
+        }
+        
+        .hero-imagen {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-texto {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-texto h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-texto p {
+            font-size: 1.5rem;
+        }
+        
+        .categorias {
+            padding: 4rem 1rem 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .categorias h2 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #2c3e50;
+            font-size: 2.2rem;
+            font-family: 'Montserrat', 'Georgia', serif;
+            font-weight: 700;
+        }
+        
+        .grid-categorias {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(320px, 1fr));
+            gap: 2.5rem;
+            justify-content: center;
+        }
+        
+        .categoria {
+            background-color: white;
+            border-radius: 12px;
+            padding: 3.5rem 2.5rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            border: 2px solid #f0f0f0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            font-size: 1.2rem;
+        }
+        
+        .categoria:hover {
+            transform: translateY(-5px);
+            background-color: #f0f0f0c2;
+            border-color: #f0f0f0c2;
+        }
+        
+        .categoria a {
+            text-decoration: none;
+            color: #2c3e50;
+            display: block;
+            transition: color 0.3s;
+        }
+        
+        .categoria a:hover {
+            color: #22223b;
+        }
+        
+        .categoria img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            background-color: #ecf0f1;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+        }
+        
+        .categoria h3 {
+            font-size: 1.7rem;
+            margin-bottom: 0.7rem;
+            font-family: 'Montserrat', 'Georgia', serif;
+            font-weight: 600;
+        }
+        
+        .categoria p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem 2rem 1rem;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .redes-sociales {
+            margin-bottom: 1.2rem;
+        }
+        
+        .redes-sociales a {
+            color: white;
+            margin: 0 1.2rem;
+            text-decoration: none;
+            font-size: 1.15rem;
+            transition: color 0.3s;
+        }
+        
+        .redes-sociales a:hover {
+            transform: translateY(-100px);
+            color: #ffffff;
+        }
+        
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+        }
+
+        .carrusel {
+            position: relative;
+            width: 100vw;
+            max-width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            height: 700px; 
+            margin-top: 0;
+            margin-bottom: 3rem;
+            overflow: hidden;
+            border-radius: 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+        }
+        .carrusel-imagenes {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(.25,.8,.25,1);
+        }
+        .carrusel-imagen {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carrusel-boton {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(44,62,80,0.6);
+            color: #fff;
+            border: none;
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 2;
+            transition: background 0.3s;
+        }
+        .carrusel-boton:hover {
+            background: #22223b;
+        }
+        .carrusel-boton.izq {
+            left: 20px;
+        }
+        .carrusel-boton.der {
+            right: 20px;
+        }
+        .carrusel-indicadores {
+            position: absolute;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .carrusel-indicador {
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.5;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .carrusel-indicador.activo {
+            opacity: 1;
+            background: #22223b;
+        }
+
+        .categorias h2,
+        footer h2,
+        .hero-texto h2 {
+            font-family: 'Montserrat', 'Georgia', serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contenedor-header">
+            <h1>Electronica 2007</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="quienes-somos">
+            <div class="contenedor">
+                <h2>¿Quiénes Somos?</h2>
+                
+                <div class="contenido-principal">
+                    <div class="imagen-tienda">
+                        <img src="https://i.pinimg.com/1200x/2a/de/9c/2ade9cbd4cd817824d3d1ed94771912c.jpg" alt="Nuestra tienda"> 
+                    </div>
+                    <div class="texto-contenido">
+                        <h3>Nuestra Historia</h3>
+                        <p> <strong>Electronica 2007</strong> nació como un proyecto creado por un grupo de estudiantes apasionados por la música y la tecnología. Nuestra idea surgió del deseo de combinar ambos mundos en un espacio donde las personas pudieran conocer más sobre instrumentos musicales y compartir ese gusto por crear sonidos únicos.</p>
+                        
+                        <p>Desde nuestros primeros bocetos, quisimos que este proyecto fuera más que una simple página: un lugar donde se pueda aprender, descubrir y conectar con otros que también sienten la música como parte de su vida.</p>
+                        
+                        <p>Cada parte del sitio refleja el esfuerzo, la dedicación y el entusiasmo de un grupo que, aunque aún está aprendiendo, cree firmemente en el poder de la música para inspirar y unir a las personas.</p>
+                        
+                        <h3>Nuestros Valores</h3>
+                        <div class="valores">
+                            <div class="valor">
+                                <h4>Calidad</h4>
+                                <p>Trabajamos solo con las mejores marcas y productos certificados</p>
+                            </div>
+                            <div class="valor">
+                                <h4>Asesoramiento</h4>
+                                <p>Te ayudamos a encontrar el instrumento perfecto para tus necesidades</p>
+                            </div>
+                            <div class="valor">
+                                <h4>Pasión</h4>
+                                <p>Amamos la música tanto como tú y eso se refleja en nuestro trabajo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenedor">
+            <div class="redes-sociales">
+                <a href="https://instagram.com/electronica2007" target="_blank">Instagram</a>
+                <a href="https://facebook.com/electronica2007" target="_blank">Facebook</a>
+            </div>
+            <p>&copy; 2025 Electronica 2007. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
